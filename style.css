@@ -1,5 +1,5 @@
 :root {
-    --pink: #f14e95;
+    --pink: #f9cee1;
     --bg: #0a0a0a;
     --shadow: 0 2px 2px rgb(0 0 0 / 0.5);
 }
@@ -15,6 +15,39 @@ body {
     gap: 20px; /* Khoảng cách giữa các mục là 30px */
     padding: 10px; /* Thêm padding cho navbar nếu cần */
 }
+
+/* Đặt Flexbox cho hàng chứa danh sách quà cưới */
+.row.justify-content-center.text-center {
+    display: flex; /* Sử dụng Flexbox */
+    flex-wrap: wrap; /* Cho phép các phần tử xuống dòng */
+    justify-content: center; /* Căn giữa các phần tử */
+}
+
+/* Đặt chiều rộng cho các phần tử danh sách */
+.col-md-6 {
+    margin: 10px; /* Khoảng cách giữa các danh sách */
+}
+
+/* Tăng khoảng cách giữa các danh sách lên 20px */
+.list-group {
+    margin-bottom: 20px; /* Khoảng cách giữa các danh sách */
+}
+
+/* Media Query cho điện thoại */
+@media (max-width: 768px) {
+    .row.justify-content-center.text-center {
+        flex-direction: column; /* Đặt chiều dọc cho điện thoại */
+    }
+
+    .col-md-6 {
+        margin: 0; /* Bỏ khoảng cách bên ngoài cho danh sách trên điện thoại */
+    }
+
+    .list-group {
+        margin-bottom: 20px; /* Khoảng cách giữa các danh sách trên điện thoại */
+    }
+}
+
 .hero::before {
     content: "";
     position: absolute;
@@ -26,7 +59,7 @@ body {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    filter: grayscale();
+    /*filter: grayscale();*/
 }
 main p.namu {
     font-size: 30px;
@@ -35,6 +68,22 @@ main p.namu {
 .hero {
     position: relative;
     min-height: 100vh;
+}
+
+h1 {
+    text-align: center; /* Căn giữa nội dung */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+h1 div {
+    display: block; /* Đảm bảo mỗi phần nằm trên một dòng riêng */
+    font-size: 2.5rem; /* Kích thước chữ cho máy tính */
+}
+
+@media (max-width: 768px) {
+    h1 div {
+        font-size: 6rem; /* Kích thước chữ nhỏ hơn cho điện thoại */
+    }
 }
 
 .hero h1,
@@ -110,7 +159,7 @@ main p.namu {
     color: var(--pink);
     font-family: "dancing_scriptregular", cursive;
     font-size: 5rem;
-    font-weight: bold;
+
     margin-bottom: 30px;
 }
 
@@ -332,6 +381,7 @@ footer li {
 
 /* Media Query */
 /* Extra large */
+
 @media (max-width: 1200px) {
     .home .heart {
         transform: translateX(-50%) translateY(45px);
@@ -437,6 +487,18 @@ footer li {
         top: 31px;
     }
 }
+
+.simply-countdown {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử */
+    justify-content: center; /* Căn giữa các phần tử */
+    flex-wrap: nowrap; /* Ngăn không cho các phần tử xuống dòng */
+}
+
+.simply-countdown div {
+    margin: 0 10px; /* Thêm khoảng cách giữa các phần tử */
+    text-align: center; /* Căn giữa nội dung trong mỗi phần tử */
+}
+
 .header {
     text-align: center;
     margin-top: 50px;
@@ -447,8 +509,42 @@ footer li {
     margin-bottom: 20px;
 }
 
+.event-details p {
+    word-wrap: break-word; /* Ngắt từ dài */
+    overflow-wrap: break-word; /* Ngăn tràn nội dung */
+    width: 100%; /* Đặt chiều rộng 100% */
+    max-width: 100%; /* Chiều rộng tối đa */
+    margin: 10px 0; /* Thêm khoảng cách trên và dưới */
+    padding: 5px; /* Thêm padding nếu cần */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng chiều rộng */
+    white-space: normal; /* Cho phép xuống dòng */
+}
+
+.event-container .event-card {
+    margin: 20px;
+}
+
 .event-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Khoảng cách giữa hai khung sự kiện */
+    margin-top: 30px;
+}
+
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Khoảng cách giữa hai khung sự kiện */
+    margin-top: 30px;
+}
+
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 50px; /* Khoảng cách giữa hai khung sự kiện */
@@ -464,6 +560,8 @@ footer li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo bóng đổ */
     text-align: center; /* Canh giữa chữ trong khung */
     margin-bottom: 30px; /* Khoảng cách phía dưới khung */
+    flex: 1 1 45%;
+    margin: 20px;
 }
 
 .event-image {
@@ -480,6 +578,20 @@ footer li {
 
 .event-details {
     margin-bottom: 15px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .event-card {
+        flex: 1 1 100%; /* Đặt chiều rộng 100% cho mỗi khối trên điện thoại */
+    }
+}
+
+@media (max-width: 768px) {
+    .event-details {
+        font-size: 14px; /* Kích thước chữ cho điện thoại */
+        white-space: nowrap; /* Cho phép xuống dòng nếu cần */
+    }
 }
 
 .map-link {

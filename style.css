@@ -16,38 +16,6 @@ body {
     padding: 10px; /* Thêm padding cho navbar nếu cần */
 }
 
-/* Đặt Flexbox cho hàng chứa danh sách quà cưới */
-.row.justify-content-center.text-center {
-    display: flex; /* Sử dụng Flexbox */
-    flex-wrap: wrap; /* Cho phép các phần tử xuống dòng */
-    justify-content: center; /* Căn giữa các phần tử */
-}
-
-/* Đặt chiều rộng cho các phần tử danh sách */
-.col-md-6 {
-    margin: 10px; /* Khoảng cách giữa các danh sách */
-}
-
-/* Tăng khoảng cách giữa các danh sách lên 20px */
-.list-group {
-    margin-bottom: 20px; /* Khoảng cách giữa các danh sách */
-}
-
-/* Media Query cho điện thoại */
-@media (max-width: 768px) {
-    .row.justify-content-center.text-center {
-        flex-direction: column; /* Đặt chiều dọc cho điện thoại */
-    }
-
-    .col-md-6 {
-        margin: 0; /* Bỏ khoảng cách bên ngoài cho danh sách trên điện thoại */
-    }
-
-    .list-group {
-        margin-bottom: 20px; /* Khoảng cách giữa các danh sách trên điện thoại */
-    }
-}
-
 .hero::before {
     content: "";
     position: absolute;
@@ -351,25 +319,6 @@ footer li {
     margin: 0.5rem;
 }
 
-.audio-icon-wrapper {
-    width: 4rem;
-    height: 4rem;
-    font-size: 4rem;
-    position: fixed;
-    bottom: 2.5rem;
-    right: 2rem;
-    cursor: pointer;
-    color: white;
-    opacity: 0.5;
-    mix-blend-mode: difference;
-    animation: rotating 4s linear infinite;
-    transform-origin: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 0;
-}
-
 @keyframes rotating {
     from {
         transform: rotate(0);
@@ -522,24 +471,6 @@ footer li {
 
 .event-container .event-card {
     margin: 20px;
-}
-
-.event-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 50px; /* Khoảng cách giữa hai khung sự kiện */
-    margin-top: 30px;
-}
-
-.event-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 50px; /* Khoảng cách giữa hai khung sự kiện */
-    margin-top: 30px;
 }
 
 .event-container {

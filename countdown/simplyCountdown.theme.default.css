@@ -25,3 +25,13 @@
 .simply-countdown > .simply-section .simply-amount {
     font-size: 1.6rem;
 }
+.simply-countdown {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử */
+    justify-content: center; /* Căn giữa các phần tử */
+    flex-wrap: nowrap; /* Ngăn không cho các phần tử xuống dòng */
+}
+
+.simply-countdown div {
+    margin: 0 10px; /* Thêm khoảng cách giữa các phần tử */
+    text-align: center; /* Căn giữa nội dung trong mỗi phần tử */
+}
